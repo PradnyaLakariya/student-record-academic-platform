@@ -1,0 +1,14 @@
+---
+- name: Install Docker engine and supporting packages
+  ansible.builtin.apt:
+    name:
+      - docker.io
+      - docker-buildx
+    state: present
+    update_cache: true
+
+- name: Ensure Docker is enabled and running
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true

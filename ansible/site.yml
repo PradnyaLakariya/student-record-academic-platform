@@ -1,0 +1,9 @@
+---
+- name: Configure and deploy the Student Record Platform
+  hosts: student_servers
+  become: true
+  roles:
+    - common
+    - docker
+    - nginx
+    - student_app
